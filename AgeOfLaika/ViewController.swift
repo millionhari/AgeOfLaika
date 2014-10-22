@@ -31,6 +31,23 @@ class ViewController: UIViewController {
         humanYears.resignFirstResponder()
     }
     
+    @IBAction func convertRealDogYearsButton(sender: UIButton) {
+        let firstTwoYears = 10.5
+        let afterTwoYears = 4
+        var year = humanYears.text.toInt()!
+        var converted:Double = 0.0
+        
+        if year<=2 {
+            converted = Double(year) * firstTwoYears
+        } else {
+            converted = (2.0 * firstTwoYears) + Double((year-2)*afterTwoYears)
+        }
+        
+        convertedToDogYears.text = "\(converted)"
+        convertedToDogYears.hidden = false
+        humanYears.resignFirstResponder()
+    }
+    
 
 
 }
